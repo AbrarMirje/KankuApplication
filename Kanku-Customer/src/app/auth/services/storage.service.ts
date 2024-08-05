@@ -58,7 +58,7 @@ export class StorageService {
     this.http.get(BASE_URL + "/api/service/isTokenExpired").subscribe(res => {
       if (res) {
         this.clearLocalStorage();
-        this.router.navigate(['/sign-in'])
+        this.router.navigate(['/'])
         return true;
       }
       else {
