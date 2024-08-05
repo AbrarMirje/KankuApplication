@@ -18,12 +18,15 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cartId;
-    @OneToMany
-    @JoinTable(name = "size_id")
+    @ManyToMany
+    @JoinTable(name = "size_cart")
     private List<Size> sizes;
     private LocalDate cartDate;
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
-    @JsonBackReference
-    private Customer customer;
+
+//    @ManyToMany
+//    @JoinTable(name = "customers_carts",
+//    joinColumns = @JoinColumn(name = "cart_id", referencedColumnName = "cartId"),
+//    inverseJoinColumns = @JoinColumn(name = "customer_id", referencedColumnName = "customerId"))
+//    @JsonBackReference
+    private Long customer_id;
 }

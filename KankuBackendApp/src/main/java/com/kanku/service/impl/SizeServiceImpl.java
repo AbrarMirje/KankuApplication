@@ -16,12 +16,7 @@ public class SizeServiceImpl implements ISizeService {
     @Autowired
     private ISizeRepository sizeRepository;
     @Override
-    public Size addSize(BatchProductSize batchProductSize) {
-
-        System.out.println(batchProductSize);
-
-
-//        sizeRepository.saveAll(batchProductSize.getSizes());
+    public BatchProductSize addSize(BatchProductSize batchProductSize) {
 
         batchProductSize.getSizes().forEach(size -> {
 
@@ -39,7 +34,7 @@ public class SizeServiceImpl implements ISizeService {
                 sizeRepository.save(sz);
             }
         });
-        return null;
+        return batchProductSize;
     }
 
     @Override

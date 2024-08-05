@@ -7,7 +7,7 @@ import com.kanku.model.Size;
 import java.util.List;
 
 public interface ISizeService {
-    Size addSize(BatchProductSize batchProductSize);
+    BatchProductSize addSize(BatchProductSize batchProductSize);
 
     List<Size> getSizeByProductId(Size size);
 

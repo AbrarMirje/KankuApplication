@@ -17,9 +17,7 @@ public class CartController {
 
     @PostMapping("/addToCart")
     public ResponseEntity<?> addToCart(@RequestBody Cart cart){
-        System.out.println(cart.toString());
       return ResponseEntity.ok(cartService.addToCart(cart));
-//        return null;
     }
 
     @PostMapping("/deleteCartItem")
@@ -29,11 +27,6 @@ public class CartController {
 
     @PostMapping("/getCartsByCustomer")
     public ResponseEntity<?> getAllCartsByCustomer(@RequestBody Customer customer){
-        cartService.getAllCartsByCustomer(customer.getCustomerId()).forEach(c->{
-            c.getSizes().forEach(s->{
-                System.out.println(s.getProduct().getProductId());
-            });
-        });
         return ResponseEntity.ok(cartService.getAllCartsByCustomer(customer.getCustomerId()));
     }
 

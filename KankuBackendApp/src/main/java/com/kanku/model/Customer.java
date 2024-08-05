@@ -34,7 +34,7 @@ public class Customer implements UserDetails {
     private LocalDate date;
     private String role;
     private String pinCode;
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Cart> carts;
 
     @Override
